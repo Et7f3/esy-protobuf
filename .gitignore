@@ -209,3 +209,7 @@ cmake/cmake-build-debug/
 # IntelliJ
 .idea
 *.iml
+
+# esy
+_esy
+node_modules

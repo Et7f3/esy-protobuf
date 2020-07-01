@@ -1,0 +1,36 @@
+{
+    "name": "esy-protobuf",
+    "version": "v3.12.3",
+    "esy": {
+        "build": [
+            "libtoolize",
+            "aclocal",
+            "autoheader",
+            "echo for reader: autoheader might not be required for other project",
+            "autoconf",
+            "automake --add-missing",
+            "./configure --prefix=#{self.install} #{ os == 'windows' ? '--host x86_64-w64-mingw32' : ''}",
+            "make",
+            "make install"
+        ],
+        "buildEnv": {
+            "DIST_LANG": "cpp",
+            "ACLOCAL_PATH": "#{libtools.share / 'aclocal' }"
+        },
+        "exportedEnv": {
+            "INCLUDE_GOOGLE_PROTOBUF": {
+                "scope": "global",
+                "val": "#{self.install / 'include'}"
+            }
+        }
+    },
+    "dependencies": {
+        "autoconf": "esy-packages/esy-autoconf#master",
+        "automake": "esy-packages/esy-automake#master",
+        "libtools": "esy-packages/esy-libtools#master"
+    },
+    "resolutions": {
+        "autoconf": "esy-packages/esy-autoconf#fb93edf57b0adc4b27b34a57a562395b224002d3",
+        "automake": "esy-packages/esy-automake#e959059ccc1560a1565b16fb63ed7052c663fca0"
+    }
+}
