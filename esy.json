@@ -14,8 +14,7 @@
             "make install"
         ],
         "buildEnv": {
-            "DIST_LANG": "cpp",
-            "ACLOCAL_PATH": "#{libtools.share / 'aclocal' }"
+            "DIST_LANG": "cpp"
         },
         "exportedEnv": {
             "INCLUDE_GOOGLE_PROTOBUF": {
@@ -25,12 +24,8 @@
         }
     },
     "dependencies": {
-        "autoconf": "esy-packages/esy-autoconf#master",
-        "automake": "esy-packages/esy-automake#master",
-        "libtools": "esy-packages/esy-libtools#master"
-    },
-    "resolutions": {
         "autoconf": "esy-packages/esy-autoconf#fb93edf57b0adc4b27b34a57a562395b224002d3",
-        "automake": "esy-packages/esy-automake#e959059ccc1560a1565b16fb63ed7052c663fca0"
+        "automake": "esy-packages/esy-automake#e959059ccc1560a1565b16fb63ed7052c663fca0",
+        "libtools": "Et7f3/esy-libtools#update_deps"
     }
 }
