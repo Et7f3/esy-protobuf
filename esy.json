@@ -2,7 +2,7 @@
     "name": "esy-protobuf",
     "version": "v3.12.3",
     "description": "protobuf packaged for esy",
-    "source": "https://github.com/protocolbuffers/protobuf/releases/download/v3.12.3/protobuf-cpp-3.12.3.tar.gz",
+    "source": "https://github.com/protocolbuffers/protobuf/releases/download/v3.12.3/protobuf-cpp-3.12.3.tar.gz#8cf85f19f396281e3f7d71bd24fc3bd523d21dbb",
     "override": {
         "buildsInSource": true,
         "build": [
