@@ -6,8 +6,7 @@
     "override": {
         "buildsInSource": true,
         "build": [
-            "find ./ -exec touch -t 200905010101 {} +",
-            "./configure --prefix=#{self.install} #{ os == 'windows' ? '--host x86_64-w64-mingw32' : ''}",
+            "./configure --disable-dependency-tracking --prefix=#{self.install} #{ os == 'windows' ? '--host x86_64-w64-mingw32' : ''}",
             "make"
         ],
         "isntall": "make install",
