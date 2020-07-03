@@ -1,0 +1,28 @@
+{
+    "name": "esy-protobuf",
+    "version": "v3.12.3",
+    "description": "protobuf packaged for esy",
+    "source": "https://github.com/protocolbuffers/protobuf/releases/download/v3.12.3/protobuf-cpp-3.12.3.tar.gz",
+    "override": {
+        "buildsInSource": true,
+        "build": [
+            "./configure --prefix=#{self.install} #{ os == 'windows' ? '--host x86_64-w64-mingw32' : ''}",
+            "make",
+            "make install"
+        ],
+        "buildEnv": {
+            "DIST_LANG": "cpp"
+        },
+        "exportedEnv": {
+            "INCLUDE_GOOGLE_PROTOBUF": {
+                "scope": "global",
+                "val": "#{self.install / 'include'}"
+            }
+        }
+    },
+    "dependencies": {
+        "autoconf": "esy-packages/esy-autoconf#fb93edf57b0adc4b27b34a57a562395b224002d3",
+        "automake": "esy-packages/esy-automake#e959059ccc1560a1565b16fb63ed7052c663fca0",
+        "libtools": "Et7f3/esy-libtools#update_deps"
+    }
+}
